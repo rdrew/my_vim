@@ -17,6 +17,7 @@ set incsearch
 set showmatch
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 let g:airline_powerline_fonts = 1
+set clipboard=unnamed
 
 "indentation rules
 filetype indent on
@@ -136,4 +137,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 colorscheme gruvbox
+"set background=light
 set background=dark
+
+let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
