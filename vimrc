@@ -130,9 +130,10 @@ Plug 'spf13/piv'
 Plug 'lumiliet/vim-twig'
 Plug 'lifepillar/vim-cheat40'
 Plug 'bling/vim-bufferline'
-Plug 'xuhdev/vim-latex-live-preview'
+"Plug 'xuhdev/vim-latex-live-preview'
 Plug 'yuttie/comfortable-motion.vim'
-Plug 'prettier/vim-prettier'
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
