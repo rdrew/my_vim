@@ -18,6 +18,7 @@ set showmatch
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 let g:airline_powerline_fonts = 1
 set clipboard=unnamed
+set mouse=a
 
 "indentation rules
 filetype indent on
@@ -48,14 +49,10 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 "command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
 "evil mode
-nnoremap <up>    <nop>
-nnoremap <down>  <nop>
-nnoremap <left>  <nop>
-nnoremap <right> <nop>
-inoremap <up>    <nop>
-inoremap <down>  <nop>
-inoremap <left>  <nop>
-inoremap <right> <nop>
+nnoremap <Up> :resize +2<CR>
+nnoremap <Down> :resize -2<CR>
+nnoremap <Left> :vertical resize -2<CR>
+nnoremap <Right> :vertical resize +2<CR>
 
 " ===============
 " Key mappings
@@ -137,8 +134,12 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
+
 colorscheme gruvbox
 "set background=light
 set background=dark
+if has('termguicolors')
+  set termguicolors
+endif
 
 let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
