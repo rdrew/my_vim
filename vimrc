@@ -29,9 +29,6 @@ set expandtab
 set smartindent
 set autoindent
 
-"latex
-autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'open -a Preview'
 
 "RG
 " --column: Show column number
